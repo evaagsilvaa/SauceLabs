@@ -29,7 +29,7 @@ test.beforeEach('I log in as a standard user', async ({ page }, testInfo) => {
 });
 
 
-test.describe('Checkout Scenarios', () => {
+test.describe('@checkout Checkout Scenarios', () => {
   test(`Proceed to checkout`, async ({ page }) => {
     const inventory = new InventoryPage(page,locale);
     const cart = new CartPage(page,locale);

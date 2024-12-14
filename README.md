@@ -18,3 +18,6 @@ To run all tests for all supported languages (e.g., both English and Portuguese)
 To run tests for a specific language, use the --project flag:
 - For English:```npx playwright test --project=English```
 - For Portuguese:```npx playwright test --project=Portuguese```
+
+## More
+This repository also contains a TestStrategy.txt file, which outlines a brief test strategy for this website. Additionally, there is a ManualTestCases.txt file, where several test cases are written using the BDD (Behavior-Driven Development) format.

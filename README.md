@@ -10,6 +10,7 @@ Please follow this steps to install and run the project:
 2. Run the following command: ```git clone https://github.com/evaagsilvaa/SauceLabs.git```
 3. Change to the project directory by using the command: ```cd SauceLabs```
 4. Run the following command to install all dependencies: ```npm i```
+5. Run the following command to install playwright browsers: ```npx playwright install```
 
 ## Running Tests
 To run all tests for all supported languages (e.g., both English and Portuguese): ```npx playwright test```

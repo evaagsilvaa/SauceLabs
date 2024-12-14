@@ -3,7 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+      "test": "playwright test",
+      "test:login": "playwright test --grep @login",
+      "test:checkout": "playwright test --grep @checkout"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",

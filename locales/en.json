@@ -1,0 +1,92 @@
+{
+    "general": {
+        "currencySymbol": "$",
+        "qtyText": "QTY",
+        "descText": "DESCRIPTION",
+        "thankYouText": "THANK YOU FOR YOUR ORDER",
+        "orderText": "Your order has been dispatched, and will arrive just as fast as the pony can get there!"
+    },
+    "buttons": {
+        "addToCartBtnText": "ADD TO CART",
+        "removeBtnText": "REMOVE",
+        "cancelBtnText": "CANCEL",
+        "finishBtnText": "FINISH",
+        "backBtnText": "<- Back",
+        "continueShoppingBtnText": "Continue Shopping",
+        "continueBtnText": "CONTINUE"
+    },
+    "headers": {
+        "products": "Products",
+        "finish": "Finish",
+        "yourCart": "Your Cart",
+        "checkoutInfo": "Checkout: Your Information",
+        "checkoutOverview": "Checkout: Overview"
+    },
+    "errorMessages": {
+        "loginErrorMessageDontMatch": "Epic sadface: Username and password do not match any user in this service",
+        "loginErrorMessageMissingUsername": "Epic sadface: Username is required",
+        "yourInfoFirstNameErrorMessage": "Error: First Name is required"
+    },
+    "checkoutInfo": {
+        "firstName": "First Name",
+        "lastName": "Last Name",
+        "zip": "Zip/Postal Code",
+        "paymentInfoSection": "Payment Information:",
+        "shippingInfoSection": "Shipping Information:",
+        "shippingInfo": "FREE PONY EXPRESS DELIVERY!"
+    },
+    "credentials": {
+        "validCheckoutInfo": {
+            "firstName": "Jane",
+            "lastName": "Doe",
+            "zip": "PO16 7GZ"
+        }
+    },
+    "inventory": [
+        {
+            "name": "Sauce Labs Backpack",
+            "description": "carry.allTheThings() with the sleek, streamlined Sly Pack that melds uncompromising style with unequaled laptop and tablet protection.",
+            "price": "$29.99",
+            "img": "./img/sauce-backpack-1200x1500.jpg"
+        },
+        {
+            "name": "Sauce Labs Bike Light",
+            "description": "A red light isn't the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.",
+            "price": "$9.99",
+            "img": "./img/bike-light-1200x1500.jpg"
+        },
+        {
+            "name": "Sauce Labs Bolt T-Shirt",
+            "description": "Get your testing superhero on with the Sauce Labs bolt T-shirt. From American Apparel, 100% ringspun combed cotton, heather gray with red bolt.",
+            "price": "$15.99",
+            "img": "./img/bolt-shirt-1200x1500.jpg"
+        },
+        {
+            "name": "Sauce Labs Fleece Jacket",
+            "description": "It's not every day that you come across a midweight quarter-zip fleece jacket capable of handling everything from a relaxing day outdoors to a busy day at the office.",
+            "price": "$49.99",
+            "img": "./img/sauce-pullover-1200x1500.jpg"
+        },
+        {
+            "name": "Sauce Labs Onesie",
+            "description": "Rib snap infant onesie for the junior automation engineer in development. Reinforced 3-snap bottom closure, two-needle hemmed sleeved and bottom won't unravel.",
+            "price": "$7.99",
+            "img": "./img/red-onesie-1200x1500.jpg"
+        },
+        {
+            "name": "Test.allTheThings() T-Shirt (Red)",
+            "description": "This classic Sauce Labs t-shirt is perfect to wear when cozying up to your keyboard to automate a few tests. Super-soft and comfy ringspun combed cotton.",
+            "price": "$15.99",
+            "img": "./img/red-tatt-1200x1500.jpg"
+        }
+    ],
+    "sortOptions": {
+        "az": "Name (A to Z)",
+        "za": "Name (Z to A)",
+        "lowhigh": "Price (low to high)",
+        "highlow": "Price (high to low)"
+    },
+    "footer": {
+        "footerCopyText": "© 2020 Sauce Labs. All Rights Reserved. Terms of Service | Privacy Policy"
+    }
+}

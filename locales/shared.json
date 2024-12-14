@@ -1,0 +1,26 @@
+{
+   "general": {
+        "titleTab": "Swag Labs"
+    },
+    "buttons": {
+        "loginBtnText": "LOGIN",
+        "checkoutBtnText": "CHECKOUT"
+    },
+    "checkoutInfo": {
+        "paymentInfo": "SauceCard #31337"
+    },
+    "credentials": {
+        "loginCredentials": [
+            { "username": "standard_user", "password": "secret_sauce" },
+            { "username": "locked_out_user", "password": "secret_sauce" },
+            { "username": "problem_user", "password": "secret_sauce" },
+            { "username": "performance_glitch_user", "password": "secret_sauce" }
+        ],
+        "invalidUsername": "invalid_username",
+        "invalidPassword": "invalid_password"
+    },
+    "footer": {
+        "footerRobotSrc": "img/SwagBot_Footer_graphic.png",
+        "ponyExpressSrc": "img/pony-express.png"
+    }
+}

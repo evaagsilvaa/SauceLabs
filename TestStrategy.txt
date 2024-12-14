@@ -1,0 +1,59 @@
+Test Strategy for Sauce Labs Website
+    1. Objectives
+        1. Ensure that the Sauce Labs website meets functional, usability, performance, and security requirements.
+        2. Provide seamless user experiences across all pages and functionalities.
+        3. Maintain traceability between requirements, test cases, and defects.
+
+    2. Scope
+    The test strategy will cover:
+        • Login Page: Validation of login functionality for different user types.
+        • Product Listing Page: Verification of product sorting and item details.
+        • Cart Page: Verification of the added products and checking cart functionalities, such as removing items.
+        • Checkout Process: Ensuring accurate user details input, payment details, shipping details, summary display and total calculations.
+        • Navigation and Usability: Testing the side menu and overall user flow.
+
+
+    3. Testing Types
+    Manual Testing:
+        • Usability and UI consistency across devices and browsers.
+        • Exploratory testing to uncover edge cases.
+        • Accessibility testing.
+    Automation Testing:
+        • Regression testing for repeated scenarios (e.g., login, adding items to cart).
+        • API testing (if applicable) for backend functionalities.
+        • Cross-browser and cross-device compatibility.
+    Performance Testing:
+        • Measure page load times and responsiveness under varying loads.
+        • Ensure the site functions smoothly under high traffic.
+    Security Testing:
+        • Validate authentication.
+        • Test for vulnerabilities such as SQL Injection or Cross-Site Scripting (XSS).
+
+    4. Traceability
+        • Map test cases to user stories, requirements and defects found.
+        • Maintain a traceability matrix for coverage (e.g., Login > Test Cases > Defects Found).
+
+    5. Test Environment
+        • Browsers: Chrome, Firefox, Safari, and Edge.
+        • Devices: Desktop, tablets, and mobile devices.
+        • Test Data: Cover standard, edge, and negative scenarios for user inputs and flows.
+
+    6. Defect Management
+        • Categorize defects by severity (Critical, Major, Minor).
+        • Track defects via a tool like JIRA or Trello.
+        
+    7. Metrics for Quality
+        • Test coverage percentage.
+        • Defect leakage rate post-deployment.
+        • Time taken for defect resolution.
+
+
+Top 3 Most Important Features:
+    1. Login functionality: Ensures only authenticated users access the website and different roles are handled correctly.
+    2. Checkout flow: Accuracy in calculating totals, capturing user information, and completing orders is critical.
+    3. Cart operations: Seamless adding, updating, and removing of products directly impacts the user's shopping experience.
+
+Top 3 Least Important Features:
+    1. Side menu (e.g., 'About' or 'Reset App State'): These are secondary and not critical for the main flow.
+    2. Low-priority UI elements (like footer links): While still important, they have less impact on core functionalities.
+    3. Sorting functionality: Valuable but not mission-critical compared to ensuring items can be purchased.

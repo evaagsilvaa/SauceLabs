@@ -1,0 +1,92 @@
+{
+    "general": {
+        "currencySymbol": "€",
+        "qtyText": "QUANT",
+        "descText": "DESCRIÇÃO",
+        "thankYouText": "OBRIGADO PELA SUA ENCOMENDA",
+        "orderText": "A sua encomenda foi enviada, chegará tão rápido quanto o pónei conseguir!"
+    },
+    "buttons": {
+        "addToCartBtnText": "ADICIONAR AO CARRINHO",
+        "removeBtnText": "REMOVER",
+        "cancelBtnText": "CANCELAR",
+        "finishBtnText": "FINALIZAR",
+        "backBtnText": "<- Voltar",
+        "continueShoppingBtnText": "Continuar a comprar",
+        "continueBtnText": "CONTINUAR"
+    },
+    "headers": {
+        "products": "Produtos",
+        "finish": "Finalizar",
+        "yourCart": "Carrinho",
+        "checkoutInfo": "Checkout: Sua Informação",
+        "checkoutOverview": "Checkout: Visão Geral"
+    },
+    "errorMessages": {
+        "loginErrorMessageDontMatch": "Cara triste: O nome de utilizador e a palavra-passe não correspondem a nenhum utilizador neste serviço!",
+        "loginErrorMessageMissingUsername": "Cara triste: O nome de utilizador é obrigatório",
+        "yourInfoFirstNameErrorMessage": "Erro: O Primeiro Nome é obrigatório"
+    },
+    "checkoutInfo": {
+        "firstName": "Primeiro Nome",
+        "lastName": "Ultimo Nome",
+        "zip": "Código Postal",
+        "paymentInfoSection": "Método de Pagamento:",
+        "shippingInfoSection": "Informações do Envio:",
+        "shippingInfo": "Entrega Expressa do Ponei Gratuita!"
+    },
+    "credentials": {
+        "validCheckoutInfo": {
+            "firstName": "João",
+            "lastName": "Silva",
+            "zip": "2400-123"
+        }
+    },
+    "inventory": [
+        {
+            "name": "Mochila Sauce Labs",
+            "description": "carry.allTheThings() com o elegante e simplificado Sly Pack que combina um estilo intransigente com uma proteção inigualável para portátil e tablet.",
+            "price": "€29.99",
+            "img": "./img/sauce-backpack-1200x1500.jpg"
+        },
+        {
+            "name": "Luz de Bicicleta Sauce Labs",
+            "description": "A red light isn\"t the desired state in testing but it sure helps when riding your bike at night. Water-resistant with 3 lighting modes, 1 AAA battery included.",
+            "price": "€9.99",
+            "img": "./img/bike-light-1200x1500.jpg"
+        },
+        {
+            "name": "T-Shirt Sauce Labs Bolt",
+            "description": "Vista o seu super-herói de teste com a t-shirt da Sauce Labs. Da American Apparel, 100% algodão penteado fiado em anel, cinzento mesclado com parafuso vermelho.",
+            "price": "€15.99",
+            "img": "./img/bolt-shirt-1200x1500.jpg"
+        },
+        {
+            "name": "Casaco de lã Sauce Labs",
+            "description": "Não é todos os dias que se encontra um casaco de lã com fecho de correr de um quarto de peso médio, capaz de lidar com tudo, desde um dia relaxante ao ar livre até um dia agitado no escritório.",
+            "price": "€49.99",
+            "img": "./img/sauce-pullover-1200x1500.jpg"
+        },
+        {
+            "name": "Macacão Sauce Labs",
+            "description": "Macacão infantil com encaixe canelado para o engenheiro de automação júnior em desenvolvimento. Fecho inferior reforçado com 3 botões, manga com bainha de duas agulhas e parte inferior não se desfaz.",
+            "price": "€7.99",
+            "img": "./img/red-onesie-1200x1500.jpg"
+        },
+        {
+            "name": "T-Shirt (Vermelha) Test.allTheThings()",
+            "description": "Esta t-shirt clássica da Sauce Labs é perfeita para usar quando se aconchega ao teclado para automatizar alguns testes. Algodão penteado fiado em anel super macio e confortável.",
+            "price": "€15.99",
+            "img": "./img/red-tatt-1200x1500.jpg"
+        }
+    ],
+    "sortOptions": {
+        "az": "Nome (A a Z)",
+        "za": "Nome (Z a A)",
+        "lowhigh": "Preço ascendente",
+        "highlow": "Preço descendente"
+    },
+    "footer": {
+        "footerCopyText": "© 2020 Sauce Labs. Todos os direitos reservados. Termos de Serviço | Política de Privacidade"
+    }
+}

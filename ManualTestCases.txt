@@ -1,0 +1,181 @@
+Feature: Login functionality
+
+    Scenario: Valid login
+        Given I am on the login page
+        When I enter the username "standard_user"
+        And I enter the password "secret_sauce"
+        And I click the "LOGIN" button
+        Then I should be redirected to the Products page
+
+    Scenario: Invalid login with incorrect credentials
+        Given I am on the login page
+        When I enter the username "invalid_user"
+        And I enter the password "wrong_password"
+        And I click the "LOGIN" button
+        Then I should see an error message "Username and password do not match any user in this service"
+
+    Scenario: Login as a locked-out user
+        Given I am on the login page
+        When I enter the username "locked_out_user"
+        And I enter the password "secret_sauce"
+        And I click the "LOGIN" button
+        Then I should see an error message "Sorry, this user has been locked out."
+
+    Scenario: Attempt login without entering credentials
+        Given I am on the login page
+        When I click the "LOGIN" button without entering a username or password
+        Then I should see an error message "Username is required"
+
+
+Feature: Products Page
+
+    Scenario: Verify products page is displayed
+        Given I am logged in as "standard_user"
+        Then I should see a list of products with their names, descriptions, images, prices, and "ADD TO CART" buttons
+
+    Scenario: Sort products by name (A to Z)
+        Given I am on the Products page
+        When I select "Name (A to Z)" from the sort dropdown
+        Then the products should be sorted alphabetically from A to Z
+
+    Scenario: Sort products by name (Z to A)
+        Given I am on the Products page
+        When I select "Name (Z to A)" from the sort dropdown
+        Then the products should be sorted alphabetically from Z to A
+
+    Scenario: Sorts products by price (low to high)
+        Given I am on the Products page
+        When I select "Price (low to high)" from the sort dropdown
+        Then the products should be sorted in ascending order of price
+
+    Scenario: Sorts products by price (high to low)
+        Given I am on the Products page
+        When I select "Price (high to low)" from the sort dropdown
+        Then the products should be sorted in descending order of price
+
+    Scenario: User adds a product to the cart
+        Given I am on the Products page
+        When I click the "Add to Cart" button for "Sauce Labs Backpack"
+        Then the cart icon should display "1"
+        And the "REMOVE" button should appear for "Sauce Labs Backpack"
+
+    Scenario: User removes a product from the cart
+        Given I have "Sauce Labs Backpack" in my cart
+        When I click the "REMOVE" button for "Sauce Labs Backpack"
+        Then the cart icon shouldn't display any number
+        And the product should no longer be in my cart
+
+
+
+Feature: Product Detail Page
+
+    Scenario: User navigates to the product detail page by clicking on the product image
+        Given I am on the Products page
+        When I click on the image of the "Sauce Labs Backpack"
+        Then I should be redirected to the product detail page for "Sauce Labs Backpack"
+
+    Scenario: User navigates to the product detail page by clicking on the product name
+        Given I am on the Products page
+        When I click on the name of the "Sauce Labs Backpack"
+        Then I should be redirected to the product detail page for "Sauce Labs Backpack"
+
+    Scenario: Adding a product to the cart from the product detail page
+        Given I am on the product detail page for "Sauce Labs Backpack"
+        When I click the "ADD TO CART" button
+        Then the button text should change to "REMOVE"
+        And the cart icon in the header should show "1"
+
+    Scenario: Removing a product from the cart on the product detail page
+        Given I have added "Sauce Labs Backpack" to the cart from the product detail page
+        When I click the "REMOVE" button
+        Then the button text should change to "Add to Cart"
+        And the cart icon shouldn't display any number
+
+
+
+Feature: Cart Page
+
+    Scenario: User views the cart
+        Given I have added "Sauce Labs Backpack" to my cart
+        When I click the cart icon
+        Then I should be redirected to the cart page
+        And I should see "Sauce Labs Backpack" listed with name, description, price and quantity
+
+    Scenario: View items in the cart
+        Given I have added products to the cart
+        When I click on the cart icon
+        Then I should see the list of added products with their names, descriptions, prices and quantity
+
+
+
+Feature: Checkout
+
+    Scenario: Proceed to checkout
+        Given I have items in my cart
+        When I click the "Checkout" button
+        Then I should be redirected to the checkout information page
+
+    Scenario: User enters valid information on "Checkout: Your Information" page
+        Given I am on the "Checkout: Your Information" page
+        When I enter "John" as First Name, "Doe" as Last Name, and "12345" as Zip Code
+        And I click the "Continue" button
+        Then I should be redirected to the "Checkout: Overview" page
+
+    Scenario: User leaves First Name field blank on "Checkout: Your Information" page
+        Given I am on the "Checkout: Your Information" page
+        When I leave the First Name field blank, but enter "Doe" as Last Name and "12345" as Zip Code
+        And I click the "Continue" button
+        Then I should see an error message "First Name is required."
+
+    Scenario: User leaves all fields blank on "Checkout: Your Information" page
+        Given I am on the "Checkout: Your Information" page
+        When I leave the all fields blank
+        And I click the "Continue" button
+        Then I should see an error message "First Name is required."
+
+    Scenario: User reviews the order on the checkout overview page
+        Given I am on the "Checkout: Overview" page
+        When I review the order
+        Then I should see the correct products and respective details, payment information, shipping information, item total, tax and total
+
+    Scenario: User completes an order
+        Given I am on the checkout overview page
+        When I click the "Finish" button
+        Then I should be redirected to the confirmation order page where you can see the message "THANK YOU FOR YOUR ORDER" and "Your order has been dispatched, and will arrive just as fast as the pony can get there!"
+
+
+
+Feature: Menu Navigation
+
+    Scenario: User opens the side menu
+        Given I am on any page after logging in
+        When I click the hamburger menu icon
+        Then the side menu should open
+        And I should see options like "All Items," "About", "Logout" and "Reset App State"
+
+    Scenario: User navigates to the Products page using the hamburger menu
+        Given I am on any page after logging in
+        When I click the hamburger menu icon
+        And I click the "All Items"
+        Then I should be redirected to the Product page
+
+    Scenario: User navigates to the "About" page
+        Given I am on any page after logging in
+        When I click the hamburger menu icon
+        And I click the "About"
+        Then I should be redirected to the Sauce Labs page
+        And the URL should match "https://saucelabs.com/"
+
+    Scenario: Logout successfully
+        Given I am on any page after logging in
+        When I click the hamburger menu icon
+        And I click "Logout"
+        Then I should be redirected to the login page
+
+    Scenario: User resets the app state
+        Given I am on any page after logging in
+        And I have items in my cart
+        When I click the hamburger menu icon
+        And I click "Reset App State"
+        Then the cart icon shouldn't display any number
+        And all products should have the "Add to Cart" button

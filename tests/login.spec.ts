@@ -23,7 +23,7 @@ test.beforeEach('Open Login page', async ({ page }, testInfo) => {
   await login.navLogin();
 });
 
-test.describe('Login Scenarios', () => {
+test.describe('@login Login Scenarios', () => {
   test(`Valid Login > Username: ${standardUser.username}`, async ({ page }) => {
     const login = new LoginPage(page);
     const inventory = new InventoryPage(page,locale);

@@ -1,0 +1,43 @@
+name: Playwright Tests
+
+on:
+  # Schedule tests to run daily at 1 AM UTC
+  schedule:
+    - cron: '0 1 * * *'
+  # Allow manual triggering of the workflow with inputs
+  workflow_dispatch:
+    inputs:
+      suite:
+        description: 'Test suite to run (e.g., login, checkout, or all)'
+        required: true
+        default: 'all'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Check out the repository
+      - name: Checkout Code
+        uses: actions/checkout@v3
+
+      # Set up Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+
+      # Install dependencies
+      - name: Install Dependencies
+        run: npm ci
+
+      # Run Playwright tests based on the selected suite
+      - name: Run Specified Test Suite
+        run: |
+          if [ "${{ github.event.inputs.suite }}" == "login" ]; then
+            npm run test:login
+          elif [ "${{ github.event.inputs.suite }}" == "checkout" ]; then
+            npm run test:checkout
+          else
+            npm run test
+          fi

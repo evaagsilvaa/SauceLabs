@@ -1,10 +1,8 @@
 name: Playwright Tests
 
 on:
-  # Schedule tests to run daily at 1 AM UTC
   schedule:
     - cron: '0 1 * * *'
-  # Allow manual triggering of the workflow with inputs
   workflow_dispatch:
     inputs:
       suite:
@@ -30,6 +28,10 @@ jobs:
       # Install dependencies
       - name: Install Dependencies
         run: npm ci
+
+      # Install Playwright browsers
+      - name: Install Playwright Browsers
+        run: npx playwright install
 
       # Run Playwright tests based on the selected suite
       - name: Run Specified Test Suite

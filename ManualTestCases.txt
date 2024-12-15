@@ -30,8 +30,9 @@ Feature: Login functionality
 Feature: Products Page
 
     Scenario: Verify products page is displayed
-        Given I am logged in as "standard_user"
+        Given I am logged in
         Then I should see a list of products with their names, descriptions, images, prices, and "ADD TO CART" buttons
+	And the products are sorted by "Name (A to Z)" by default
 
     Scenario: Sort products by name (A to Z)
         Given I am on the Products page
@@ -55,7 +56,7 @@ Feature: Products Page
 
     Scenario: User adds a product to the cart
         Given I am on the Products page
-        When I click the "Add to Cart" button for "Sauce Labs Backpack"
+        When I click the "ADD TO CART" button for "Sauce Labs Backpack"
         Then the cart icon should display "1"
         And the "REMOVE" button should appear for "Sauce Labs Backpack"
 
@@ -64,6 +65,7 @@ Feature: Products Page
         When I click the "REMOVE" button for "Sauce Labs Backpack"
         Then the cart icon shouldn't display any number
         And the product should no longer be in my cart
+	And the "ADD TO CART" button should appear for "Sauce Labs Backpack"
 
 
 
@@ -88,7 +90,7 @@ Feature: Product Detail Page
     Scenario: Removing a product from the cart on the product detail page
         Given I have added "Sauce Labs Backpack" to the cart from the product detail page
         When I click the "REMOVE" button
-        Then the button text should change to "Add to Cart"
+        Then the button text should change to "ADD TO CART"
         And the cart icon shouldn't display any number
 
 
@@ -99,7 +101,8 @@ Feature: Cart Page
         Given I have added "Sauce Labs Backpack" to my cart
         When I click the cart icon
         Then I should be redirected to the cart page
-        And I should see "Sauce Labs Backpack" listed with name, description, price and quantity
+        And I should see "Sauce Labs Backpack" listed with name, description, price, quantity and "REMOVE"
+	And I should see "CONTINUE SHOPPING" and "CHECKOUT"
 
     Scenario: View items in the cart
         Given I have added products to the cart
@@ -114,23 +117,25 @@ Feature: Checkout
         Given I have items in my cart
         When I click the "Checkout" button
         Then I should be redirected to the checkout information page
+	And I should see "First Name", "Last Name" and "Zip/Postal Code" fields
+	And I should see the "CANCEL" and "CONTINUE" buttons
 
     Scenario: User enters valid information on "Checkout: Your Information" page
         Given I am on the "Checkout: Your Information" page
         When I enter "John" as First Name, "Doe" as Last Name, and "12345" as Zip Code
-        And I click the "Continue" button
+        And I click the "CONTINUE" button
         Then I should be redirected to the "Checkout: Overview" page
 
     Scenario: User leaves First Name field blank on "Checkout: Your Information" page
         Given I am on the "Checkout: Your Information" page
         When I leave the First Name field blank, but enter "Doe" as Last Name and "12345" as Zip Code
-        And I click the "Continue" button
+        And I click the "CONTINUE" button
         Then I should see an error message "First Name is required."
 
     Scenario: User leaves all fields blank on "Checkout: Your Information" page
         Given I am on the "Checkout: Your Information" page
         When I leave the all fields blank
-        And I click the "Continue" button
+        And I click the "CONTINUE" button
         Then I should see an error message "First Name is required."
 
     Scenario: User reviews the order on the checkout overview page
@@ -140,7 +145,7 @@ Feature: Checkout
 
     Scenario: User completes an order
         Given I am on the checkout overview page
-        When I click the "Finish" button
+        When I click the "FINISH" button
         Then I should be redirected to the confirmation order page where you can see the message "THANK YOU FOR YOUR ORDER" and "Your order has been dispatched, and will arrive just as fast as the pony can get there!"
 
 
@@ -178,4 +183,4 @@ Feature: Menu Navigation
         When I click the hamburger menu icon
         And I click "Reset App State"
         Then the cart icon shouldn't display any number
-        And all products should have the "Add to Cart" button
+        And all products should have the "ADD TO CART" button

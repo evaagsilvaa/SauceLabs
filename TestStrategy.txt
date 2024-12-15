@@ -27,7 +27,6 @@ Test Strategy for Sauce Labs Website
         • Ensure the site functions smoothly under high traffic.
     Security Testing:
         • Validate authentication.
-        • Test for vulnerabilities such as SQL Injection or Cross-Site Scripting (XSS).
 
     4. Traceability
         • Map test cases to user stories, requirements and defects found.

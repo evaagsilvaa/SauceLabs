@@ -1,8 +1,8 @@
 name: Playwright Tests
 
 on:
-  schedule:
-    - cron: '0 1 * * *'
+  #schedule:
+  #  - cron: '0 1 * * *'
   workflow_dispatch:
     inputs:
       suite:
